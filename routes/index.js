@@ -41,11 +41,11 @@ function output(error, stdout, stderr) {
 
 router.get('/shim', function(req, res, next) {
   console.log(req.query['q']);
-  exec('cd PokemonGo-Map/ && python example.py -a ptc -u ' + credentials.user + ' -p ' + credentials.pass + ' -l "' +  req.query['q'] + '" -st 10', function(error, stdout, stderr) {
+  exec('cd PokemonGo-Map/ && python example.py -a ptc -u ' + credentials.user + ' -p ' + credentials.pass + ' -l "' +  req.query['q'] + '" -st 10 -H "0.0.0.0"', function(error, stdout, stderr) {
     output(error, stdout, stderr);
   })
   setTimeout(function() {
-    res.redirect('http://127.0.0.1:5000');
+    res.redirect('http://52.49.131.47:5000');
   }, 1000);
 });
 
