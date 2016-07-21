@@ -50,7 +50,7 @@ router.get('/shim', function(req, res, next) {
     output(error, stdout, stderr);
   })
   setTimeout(function() {
-    res.redirect(config.server);
+    res.redirect('/poke')
   }, 3000);
 });
 
@@ -63,6 +63,10 @@ router.get('/map', function(req, res, next) {
 
 router.get('/location', function(req, res, next) {
   res.redirect('/map?q=' + req.query['location'])
+});
+
+router.get('/poke', function(req, res, next) {
+  res.redirect(config.server);
 });
 
 module.exports = router;
