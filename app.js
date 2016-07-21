@@ -54,6 +54,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
+console.log('starting server..');
 app.listen('8000');
 
 module.exports = app;
