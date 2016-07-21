@@ -1,11 +1,11 @@
 var locations = {
-  "shim_home" : "32.476456, 34.965745",
-  "pardes_hanna" : "32.476307, 34.975410",
-  "sdot_yam" : "32.794622, 35.014147",
-  "helena" : "32.501518, 34.890209",
-  "binyamina" : "32.522301, 34.942460",
-  "ramat_hanadiv" : "32.553553, 34.946606",
-  "zichron_yaakov" : "32.574570, 34.954593"
+  "Shim\'s Home" : "32.476456, 34.965745",
+  "Pardes Hanna" : "32.476307, 34.975410",
+  "Sdot Yam" : "32.794622, 35.014147",
+  "Namal Caesarea" : "32.501518, 34.890209",
+  "Binyamina" : "32.522301, 34.942460",
+  "Ramat Hanadiv" : "32.553553, 34.946606",
+  "Zichron Yaakov" : "32.574570, 34.954593"
 }
 
 module.exports = locations;

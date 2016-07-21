@@ -2,4 +2,9 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  ul
+    each location, key in locations
+      li
+        a(href='/location?location=#{location}') #{key}
+        br
+        br

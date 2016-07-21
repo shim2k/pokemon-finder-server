@@ -1,14 +1,19 @@
 var express = require('express');
 var router = express.Router();
 
+///////////// CONFIGURATION FILES /////////////
+var config = require('../config.js');
+var locations = require('../locations.js');
 var credentials = require('../credentials.js');
+/////////////         END         /////////////
+
 var sys = require('util')
 var exec = require('child_process').exec;
 
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  console.log(locations);
+  res.render('index', { title: 'Locations:', locations: locations });
 });
 
 router.get('/setup', function(req, res, next) {
@@ -17,14 +22,14 @@ router.get('/setup', function(req, res, next) {
   });
 
   // Installing pokemon finder
-  exec('git clone https://github.com/AHAAAAAAA/PokemonGo-Map.git', function(function(error, stdout, stderr) {
+  exec('git clone https://github.com/AHAAAAAAA/PokemonGo-Map.git', function(error, stdout, stderr) {
     exec('sudo -H python "PokemonGo-Map/Easy Setup/get-pip.py"', function(error, stdout, stderr) {
       output(error, stdout, stderr);
       exec('cd PokemonGo-Map/ && pip install -r requirements.txt', function(error, stdout, stderr) {
         output(error, stdout, stderr);
       })
     });
-  }));
+  });
 
   res.send('setting up dependencies..');
 });
@@ -45,8 +50,8 @@ router.get('/shim', function(req, res, next) {
     output(error, stdout, stderr);
   })
   setTimeout(function() {
-    res.redirect('http://52.49.131.47:5000');
-  }, 1000);
+    res.redirect(config.server);
+  }, 3000);
 });
 
 router.get('/map', function(req, res, next) {
@@ -54,6 +59,10 @@ router.get('/map', function(req, res, next) {
     output(error, stdout, stderr);
     res.redirect('/shim?q=' + req.query['q']);
   });
+});
+
+router.get('/location', function(req, res, next) {
+  res.redirect('/map?q=' + req.query['location'])
 });
 
 module.exports = router;
