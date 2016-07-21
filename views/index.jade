@@ -2,9 +2,12 @@ extends layout
 
 block content
   h1= title
+  h1
+    a(href='http://poke.shimi.io') Open Map
+  br
   ul
     each location, key in locations
-      li
+      h3
         a(href='/location?location=#{location}') #{key}
         br
         br
