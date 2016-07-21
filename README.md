@@ -1,10 +1,14 @@
 # pokemon-finder-server
 
-This lean node.js server handles the PokemonGo-Map python script
+A Node server to handle the PokemonGo-Map python script.
+
+Clone this to an AWS server instance or other platforms.
 
 usage:
 
 - git clone https://github.com/Shim2k/pokemon-finder-server.git
+
+- cd pokemon-finder-server && git clone https://github.com/AHAAAAAAA/PokemonGo-Map.git
 
 - npm install
 

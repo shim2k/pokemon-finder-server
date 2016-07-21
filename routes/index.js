@@ -17,14 +17,14 @@ router.get('/setup', function(req, res, next) {
   });
 
   // Installing pokemon finder
-  // exec('git clone https://github.com/AHAAAAAAA/PokemonGo-Map.git');
-  // exec('');
-  exec('sudo -H python "PokemonGo-Map/Easy Setup/get-pip.py"', function(error, stdout, stderr) {
-    output(error, stdout, stderr);
-    exec('cd PokemonGo-Map/ && pip install -r requirements.txt', function(error, stdout, stderr) {
+  exec('git clone https://github.com/AHAAAAAAA/PokemonGo-Map.git', function(function(error, stdout, stderr) {
+    exec('sudo -H python "PokemonGo-Map/Easy Setup/get-pip.py"', function(error, stdout, stderr) {
       output(error, stdout, stderr);
-    })
-  });
+      exec('cd PokemonGo-Map/ && pip install -r requirements.txt', function(error, stdout, stderr) {
+        output(error, stdout, stderr);
+      })
+    });
+  }));
 
   res.send('setting up dependencies..');
 });
@@ -41,7 +41,7 @@ function output(error, stdout, stderr) {
 
 router.get('/shim', function(req, res, next) {
   console.log(req.query['q']);
-  exec('cd PokemonGo-Map/ && python example.py -a ptc -u ' + credentials.user + ' -p ' + credentials.pass + ' -l "' +  req.query['q'] + '" -st 10', function(error, stdout, stderr) {
+  exec('cd PokemonGo-Map/ && python example.py -a ptc -u ' + credentials.user + ' -p ' + credentials.pass + ' -l "' +  req.query['q'] + '" -st 10 -H "0.0.0.0"', function(error, stdout, stderr) {
     output(error, stdout, stderr);
   })
   setTimeout(function() {
