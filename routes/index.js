@@ -54,7 +54,7 @@ router.get('/shim', function(req, res, next) {
   }, 3000);
 });
 
-router.get('/map', function(req, res, next) {
+router.get('/poke', function(req, res, next) {
   exec("kill -9 $(ps aux | grep example.py | grep -v grep | awk '{print $2}')", function(error, stdout, stderr) {
     output(error, stdout, stderr);
     res.redirect('/shim?q=' + req.query['q']);
@@ -62,10 +62,10 @@ router.get('/map', function(req, res, next) {
 });
 
 router.get('/location', function(req, res, next) {
-  res.redirect('/map?q=' + req.query['location'])
+  res.redirect('/poke?q=' + req.query['location'])
 });
 
-router.get('/poke', function(req, res, next) {
+router.get('/map', function(req, res, next) {
   res.redirect(config.server);
 });
 
