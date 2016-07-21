@@ -45,7 +45,7 @@ router.get('/shim', function(req, res, next) {
     output(error, stdout, stderr);
   })
   setTimeout(function() {
-    res.redirect('http://127.0.0.1:5000');
+    res.redirect('http://52.49.131.47:5000');
   }, 1000);
 });
 
