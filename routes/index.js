@@ -1,8 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
+var credentials = require('../credentials.js');
 var sys = require('util')
 var exec = require('child_process').exec;
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -39,7 +41,7 @@ function output(error, stdout, stderr) {
 
 router.get('/shim', function(req, res, next) {
   console.log(req.query['q']);
-  exec('cd PokemonGo-Map/ && python example.py -a ptc -u (user) -p (pass) -l "' +  req.query['q'] + '" -st 10', function(error, stdout, stderr) {
+  exec('cd PokemonGo-Map/ && python example.py -a ptc -u ' + credentials.user + ' -p ' + credentials.pass + ' -l "' +  req.query['q'] + '" -st 10', function(error, stdout, stderr) {
     output(error, stdout, stderr);
   })
   setTimeout(function() {
