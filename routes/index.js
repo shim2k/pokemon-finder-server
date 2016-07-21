@@ -67,7 +67,8 @@ router.get('/location', function(req, res, next) {
 
 router.get('/map', function(req, res, next) {
   setTimeout(function() {
-    res.redirect(config.server);
+    res.render('redirect');
+    // res.redirect(config.server);
   }, 500);
 });
 
