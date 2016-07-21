@@ -67,7 +67,7 @@ router.get('/location', function(req, res, next) {
 
 router.get('/map', function(req, res, next) {
   setTimeout(function() {
-    res.redirect(config.server);
+    res.redirect('http://poke.shimi.io');
   }, 1000);
 });
 
