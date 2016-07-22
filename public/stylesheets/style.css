@@ -5,4 +5,10 @@ body {
 
 a {
   color: #00B7FF;
+  font-size: 1.5em;
+}
+
+.open-map {
+  font-size: 2em;
+  color: red;
 }
