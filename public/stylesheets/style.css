@@ -1,15 +1,15 @@
 body {
-  padding: 50px;
+  padding: 50px 0;
   text-align: center;
-  font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 22px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .open-map {
-  font-size: 2em;
+  font-size: 2.8em;
   color: red;
 }
