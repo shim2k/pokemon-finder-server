@@ -13,7 +13,7 @@ var exec = require('child_process').exec;
 /* GET home page. */
 router.get('/', function(req, res, next) {
   console.log(locations);
-  res.render('index', { title: 'Locations:', locations: locations });
+  res.render('index', { title: 'Shim\'s Pokemap', locations: locations });
 });
 
 router.get('/setup', function(req, res, next) {
