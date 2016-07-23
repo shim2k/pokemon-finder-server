@@ -1,6 +1,6 @@
 var credentials = {
-  user: 'apricode',
-  pass: 'apricode'
+  user: 'Imabotbot1',
+  pass: 'yhyhyhyh'
 }
 
 module.exports = credentials;

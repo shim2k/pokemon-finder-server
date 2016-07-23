@@ -4,12 +4,55 @@ body {
   font: 22px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+h1 {
+  margin: 0;
+}
+
+h1.map {
+  padding-bottom: 15px;
+}
+
+form {
+  direction: rtl;
+}
+
 a {
-  color: #00B7FF;
+  color: #283269;
   font-size: 2em;
+}
+
+.location-text {
+  height: 50px;
+  width: 420px;
+  font-size: 1em;
+  text-align: right;
+  display: inline-block;
+}
+
+.button {
+  display: inline-block;
+  vertical-align: top;
+  width: 100px;
+  height: 56px;
+  position: relative;
+  margin-right: 10px;
+  background-color: darkslateblue;
+  color: white;
+}
+
+.button p {
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  right: 50%;
+  margin: 0;
+  transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
+  -webkit-transform: translate(50%, -50%);
+  -moz-transform: translate(50%, -50%);
 }
 
 .open-map {
   font-size: 2.8em;
-  color: red;
+  color: darkslateblue;
 }
