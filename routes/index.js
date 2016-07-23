@@ -46,7 +46,7 @@ function output(error, stdout, stderr) {
 
 router.get('/shim', function(req, res, next) {
   console.log(req.query['q']);
-  exec('cd PokemonGo-Map/ && python runserver.py -a ptc -u ' + credentials.user + ' -p ' + credentials.pass + ' -l "' +  req.query['q'] + '" -st 10 -i "Rattata,Paras,Zubat,Growlithe,Ekans,Pidgey"', function(error, stdout, stderr) {
+  exec('cd PokemonGo-Map/ && python runserver.py -a ptc -u ' + credentials.user + ' -p ' + credentials.pass + ' -l "' +  req.query['q'] + '" -H "0.0.0.0" -st 10 -i "Rattata,Paras,Zubat,Growlithe,Ekans,Pidgey"', function(error, stdout, stderr) {
     output(error, stdout, stderr);
   })
   setTimeout(function() {
