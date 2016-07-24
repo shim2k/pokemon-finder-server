@@ -12,8 +12,21 @@ var exec = require('child_process').exec;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log(locations);
-  res.render('index', { title: 'Shim\'s Pokemap', locations: locations });
+  res.render('wall');
+});
+
+router.get('/main', function(req, res, next) {
+  console.log(req.query['pass']);
+  if (req.query['pass'] === 'lol') {
+    res.render('index', { title: 'Shim\'s Pokemap', locations: locations });
+  } else {
+    res.render('wall', { details : 'סיסמא לא נכונה יגבר'});
+  }
+});
+
+router.post('/login', function(req, res, next) {
+  console.log(req);
+  res.redirect('/main?pass=' + req.body.name);
 });
 
 router.get('/setup', function(req, res, next) {

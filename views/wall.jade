@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .wrong
+    #{details}
+  br
+  h1
+    רוצה מפת פוקימונים? הכנס סיסמא
+  br
+  form(name="locationForm", method="post", action="/login")
+    input(id='text',type='text',value='', class="login-input", placeholder="Enter password",name='name')
+    button(class="btn") כנס
