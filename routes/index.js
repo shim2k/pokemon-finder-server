@@ -51,7 +51,7 @@ router.get('/shim', function(req, res, next) {
   })
   setTimeout(function() {
     res.redirect('/map')
-  }, 1000);
+  }, 50);
 });
 
 router.get('/poke', function(req, res, next) {
