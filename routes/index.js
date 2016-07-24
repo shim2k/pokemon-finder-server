@@ -46,6 +46,9 @@ function output(error, stdout, stderr) {
 
 router.post('/searchlocation', function(req, res, next) {
   console.log('searchlocation POST call caught');
+  setTimeout(function() {
+    res.redirect('/');
+  }, 10)
 });
 
 router.get('/shim', function(req, res, next) {
