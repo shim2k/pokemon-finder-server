@@ -2,12 +2,18 @@ var params = '';
 
 function locationHandler(callback) {
   console.log(location);
-  if (!document.locationForm.name.value) {
+  debugger;
+  if (!document.body.children[3].children[0].value) {
     return;
   }
   var _this = this;
   _this.callback = callback;
-  var link = "https://maps.googleapis.com/maps/api/geocode/json?address=\"" + document.locationForm.name.value + "\"&key=AIzaSyASFKsZd-df8PbMMJ2ZgHzXtxhf1-bU5T8"
+  debugger;
+  if (!isNaN(Number(document.body.children[3].children[0].value.substring(0,8)))) {
+    window.location = '/poke?q=' + document.body.children[3].children[0].value;
+    return;
+  }
+  var link = "https://maps.googleapis.com/maps/api/geocode/json?address=\"" + document.body.children[3].children[0].value + "\"&key=AIzaSyASFKsZd-df8PbMMJ2ZgHzXtxhf1-bU5T8"
   $.post(link, function(data) {
     console.log(data);
     if (data.status == 'ZERO_RESULTS') { return; }

@@ -5,10 +5,9 @@ block content
   h1.map
     a(class='open-map', href='http://poke.shimi.io') פתח מפה
   br
-  div
-   form(name="locationForm", method="post", action="")
-    input(id='text',type='text',value='', placeholder="הכנס כתובת",name='name', class="location-text")
-    .button(onclick="onSubmitForm()")
+  .form
+    input(id='text',type='text',value='', placeholder="הכנס כתובת או מיקום",name='name', class="location-text")
+    .button(id="submitButton", onclick="onSubmitForm()")
       p שלח
   br
   ul
@@ -17,3 +16,6 @@ block content
         a(href='/location?location=#{location}') #{key}
         br
         br
+
+    br
+    script(type='text/javascript', src='http://counter10.01counter.com/private/counter.js?c=e70fadd7fa45700d519b273caf246401')
