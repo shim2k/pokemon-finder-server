@@ -26,7 +26,9 @@ function onSubmitForm() {
   debugger;
   locationHandler(function(value) {
     if (value) {
-      window.location = value;
+      setTimeout(function() {
+        window.location = value;
+      }, 100);
     }
   });
 }
