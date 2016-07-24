@@ -44,13 +44,6 @@ function output(error, stdout, stderr) {
   }
 }
 
-router.post('/searchlocation', function(req, res, next) {
-  console.log('searchlocation POST call caught');
-  setTimeout(function() {
-    res.redirect('/map');
-  }, 10)
-});
-
 router.get('/shim', function(req, res, next) {
   console.log(req.query['q']);
   exec('cd PokemonGo-Map/ && python runserver.py -u ' + credentials.user + ' -p ' + credentials.pass + ' -l "' +  req.query['q'] + '" -H "0.0.0.0" -st 10', function(error, stdout, stderr) {
